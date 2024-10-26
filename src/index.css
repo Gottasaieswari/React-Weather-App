@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Base Styles */
+  html {
+    font-family: "Poppins", sans-serif;
+    color: #f5f5f5;
+    background-color: #9cfd41; 
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+
+    line-height: 1.6;
+    background-image: linear-gradient(to bottom right, #1ccaec, #08080e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+
+  a {
+    color: #6acf98; /* Soft green accent for links */
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ef7e65; /* Light pink on hover for a cute effect */
+    text-decoration: underline;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.bounce {
+  animation: bounce 0.5s;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.5s ease-in-out forwards;
+}
+
+/* Custom button styles */
+.button {
+  @apply px-4 py-2 bg-pink-500 text-white font-semibold rounded-lg shadow-lg hover:bg-pink-600 transition-colors duration-300;
+}
+
+/* Card Styling */
+.card {
+  @apply p-6 bg-gray-800 rounded-3xl shadow-xl max-w-md w-full;
+}
+
+/* Utility classes for centering and layout */
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.text-title {
+  @apply text-2xl font-bold text-pink-300 mb-2;
+}
+
+.text-subtitle {
+  @apply text-lg text-gray-300 mb-4;
+}
